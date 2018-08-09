@@ -1,0 +1,23 @@
+{
+  "name": "vSky_onlineStore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pg07codes/vSky_onlineStore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pg07codes/vSky_onlineStore/issues"
+  },
+  "homepage": "https://github.com/pg07codes/vSky_onlineStore#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
