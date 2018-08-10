@@ -21,31 +21,30 @@ const item=db.define("item",{
         allowNull:false,
         type:dt.STRING
     },
-    email:{
+    price:{
         allowNull:false,
-        unique:true,
+        type:dt.INTEGER
+    },
+    mrp:{
+        allowNull:false,
+        type:dt.INTEGER
+    },
+    size:{
+        allowNull:false,
         type:dt.STRING
     },
-    password:{
-        //allowNull:false,
+    college:{
+        allowNull:false,
         type:dt.STRING
     },
-    location:{
-        //allowNull:false,
-        type:dt.STRING
+    discount:{
+        type:dt.INTEGER,
+        defaultValue:0
     },
-    state:{
-        //allowNull:false,
-        type:dt.STRING
-    },
-    phn:{
-        //allowNull:false,
-        type:dt.STRING(12)
-    },
-    googleId:{
-        type:dt.STRING
+    inStock:{
+        defaultValue:true,
+        type:dt.BOOLEAN,
     }
-
 })
 
 
@@ -56,4 +55,4 @@ db.sync({
 }).then(()=>console.log("db is synced"))
 
 
-module.exports={db}
+module.exports={db,item}

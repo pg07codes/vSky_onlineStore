@@ -20,7 +20,7 @@ app.engine("hbs",hbs.express4({
 }))
 
 app.get("/", (r, s) => {
-    s.send("home page")
+    s.render("home")
 })
 
 app.listen(PORT, () =>
