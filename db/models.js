@@ -11,7 +11,42 @@ const db=new Sequelize(dbconfig.NAME,dbconfig.USER,dbconfig.PASSWORD,{
 
 // all the model definition goes in here ---
 
+const item=db.define("item",{
+    id:{
+        autoIncrement:true,
+        primaryKey:true,
+        type:dt.INTEGER
+    },
+    name:{
+        allowNull:false,
+        type:dt.STRING
+    },
+    email:{
+        allowNull:false,
+        unique:true,
+        type:dt.STRING
+    },
+    password:{
+        //allowNull:false,
+        type:dt.STRING
+    },
+    location:{
+        //allowNull:false,
+        type:dt.STRING
+    },
+    state:{
+        //allowNull:false,
+        type:dt.STRING
+    },
+    phn:{
+        //allowNull:false,
+        type:dt.STRING(12)
+    },
+    googleId:{
+        type:dt.STRING
+    }
 
+})
 
 
 
