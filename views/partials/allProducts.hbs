@@ -1,5 +1,5 @@
 <div class="container allProducts">
-    <div class="row">
+    <div class="row justify-content-around">
 
     </div>
 
@@ -12,11 +12,10 @@
         products.forEach((p)=>{
             $allProducts.append(`
             <div class="card prod col-md-3" style="width: 15rem;">
-                <img class="card-img-top" src="../../public/images/placeholder.png" alt="Card image cap">
+                <a href=""><img class="card-img-top" src="../../public/images/placeholder.jpg" alt="Card image cap"></a>
                 <div class="card-body">
-                    <h5 class="card-title">${p.name}</h5>
+                    <p class="card-text">${p.name}</p>
                     <p class="card-text">college ==> ${p.college}</p>
-                    <a href="#" class="btn btn-success">Buy</a>
                 </div>
              </div>
             `)

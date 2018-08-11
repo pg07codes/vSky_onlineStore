@@ -10,3 +10,7 @@ html,body{
 .allProducts .row .col-md-3{
     padding:0 !important;
 }
+.footer{
+    height:70%;
+    background:#292929;
+}
