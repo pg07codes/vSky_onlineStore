@@ -9,8 +9,13 @@ module.exports={
     getItemByCollege:()=>{
 
     },
-    insertNewItem:()=>{
-
+    insertNewItem:(r,s)=>{
+        item.create({
+            name:r.body.name,
+            price:r.body.dPrice,
+            mrp:r.body.mrp,
+            college:r.body.college
+        })
     },
     UpdateItem:()=>{
 

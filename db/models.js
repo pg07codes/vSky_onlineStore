@@ -29,21 +29,9 @@ const item=db.define("item",{
         allowNull:false,
         type:dt.INTEGER
     },
-    size:{
-        allowNull:false,
-        type:dt.STRING
-    },
     college:{
         allowNull:false,
         type:dt.STRING
-    },
-    discount:{
-        type:dt.INTEGER,
-        defaultValue:0
-    },
-    inStock:{
-        defaultValue:true,
-        type:dt.BOOLEAN,
     }
 })
 
