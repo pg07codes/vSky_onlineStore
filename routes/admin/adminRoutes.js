@@ -2,6 +2,7 @@
 
 const route=require("express").Router()
 const ctrl=require("../../controllers/itemctrl")
+const collegeCtrl=require("../../controllers/collegectrl")
 
 
 route.get("/",(r,s)=>{
@@ -9,6 +10,10 @@ route.get("/",(r,s)=>{
 })
 route.post("/add",(r,s)=>{
     ctrl.insertNewItem(r,s)
+    s.redirect("/admin")
+})
+route.post("/addCollege",(r,s)=>{
+    collegeCtrl.insertNewCollege(r,s)
     s.redirect("/admin")
 })
 

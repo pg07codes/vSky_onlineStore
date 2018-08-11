@@ -29,7 +29,7 @@ app.get("/aboutus",(r,s)=>{
     s.render("about")
 })
 app.use("/admin",require("./routes/admin/adminRoutes"))
-app.use("/prod",require("./routes/product/products"))
+app.use("/prod",require("./routes/product/productRoutes"))
 
 app.listen(PORT, () =>
     console.log("up at http://localhost:"+PORT)

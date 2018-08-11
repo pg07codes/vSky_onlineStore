@@ -1,5 +1,14 @@
-
 <div class="container">
+    <form method="post" action="/admin/addCollege">
+        <div class="form-group">
+            <label for="newCollege">College</label>
+            <input type="text" class="form-control" name="newCollege" id="newCollege" placeholder="College name">
+        </div>
+        <button type="submit" class="btn btn-success">ADD</button>
+    </form>
+</div>
+
+<div class="container mt-5">
 <form method="post" action="/admin/add">
     <div class="form-group">
         <label for="name">Name</label>
@@ -14,9 +23,22 @@
         <input type="number" class="form-control" name="dPrice" id="dPrice" placeholder="Discounted Price">
     </div>
     <div class="form-group">
-        <label for="college">college</label>
-        <input type="text" class="form-control" name="college" id="college" placeholder="College">
+        <label for="college">College</label>
+        <select name="college" id="college" class="form-control">
+            <!--options generated dynamically-->
+        </select>
     </div>
     <button type="submit" class="btn btn-success">ADD</button>
 </form>
 </div>
+<script>
+    $cOptions=$(".form-group #college")
+    $.get("/prod/getAllColleges",(college)=>{
+        college.forEach((i)=>{
+            $cOptions.append(`
+            <option value="${i.cName}">${i.cName}</option>
+            `)
+        })
+    })
+
+</script>

@@ -28,14 +28,23 @@ const item=db.define("item",{
     mrp:{
         allowNull:false,
         type:dt.INTEGER
+    }
+})
+
+const college=db.define("college",{
+    cId:{
+        autoIncrement:true,
+        primaryKey:true,
+        type:dt.INTEGER
     },
-    college:{
+    cName:{
         allowNull:false,
         type:dt.STRING
     }
 })
 
-
+item.belongsTo(college)
+college.hasMany(item)
 
 db.sync({
     //alter:true
@@ -43,4 +52,4 @@ db.sync({
 }).then(()=>console.log("db is synced"))
 
 
-module.exports={db,item}
+module.exports={db,item,college}
