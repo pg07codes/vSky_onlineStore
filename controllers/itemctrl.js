@@ -17,7 +17,16 @@ module.exports={
             cb(data)
         })
     },
-    getItemByCollege:()=>{
+    getItemByCollege:(cId,cb)=>{
+        console.log(cId)
+        item.findAll({
+            where:{
+                collegecId:cId
+            }
+        }).then((data)=>{
+            console.log(data);
+            cb(data)
+        })
 
     },
     insertNewItem:(r,s)=>{
@@ -25,7 +34,7 @@ module.exports={
             name:r.body.name,
             price:r.body.dPrice,
             mrp:r.body.mrp,
-            college:r.body.college
+            collegeCId:r.body.college
         })
     },
     UpdateItem:()=>{

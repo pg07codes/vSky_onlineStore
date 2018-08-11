@@ -36,7 +36,7 @@
     $.get("/prod/getAllColleges",(college)=>{
         college.forEach((i)=>{
             $cOptions.append(`
-            <option value="${i.cName}">${i.cName}</option>
+            <option value="${i.cId}">${i.cName}</option>
             `)
         })
     })

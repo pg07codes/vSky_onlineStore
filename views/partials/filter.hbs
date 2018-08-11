@@ -1,13 +1,20 @@
 <div class="container mt-3 mb-3">
-    <form method="post" action="/prod/filter">
+    <form>
         <div class="form-group">
             <label for="college">Filter Results By College</label>
             <select name="college" id="college" class="form-control">
                 <!--options generated dynamically-->
             </select>
         </div>
-        <button type="submit" class="btn btn-outline-primary">Filter</button>
+        <button type="submit" id="filter" class="btn btn-outline-primary">Filter</button>
     </form>
+</div>
+
+<div class="container filteredProducts">
+    <div class="row justify-content-around">
+        <!--filtered results will come here-->
+    </div>
+
 </div>
 
 <script>
@@ -15,8 +22,21 @@
     $.get("/prod/getAllColleges",(college)=>{
         college.forEach((i)=>{
             $cOptions.append(`
-            <option value="${i.cName}">${i.cName}</option>
+            <option value="${i.cId}">${i.cName}</option>
             `)
+        })
+    })
+    $("#filter").on('click',(e)=>{
+        e.preventDefault()
+        let id=$("#college").find(":selected").val()
+        $.post("/prod/filter",{college:id},(products)=>{
+            if(products){
+                products.forEach((p)=>{
+                    console.log(p);
+                })
+            }
+            else
+                console.log("nothing found")
         })
     })
 
