@@ -1,1 +1,23 @@
-<h1>this is the fiter</h1>
+<div class="container mt-3 mb-3">
+    <form method="post" action="/prod/filter">
+        <div class="form-group">
+            <label for="college">Filter Results By College</label>
+            <select name="college" id="college" class="form-control">
+                <!--options generated dynamically-->
+            </select>
+        </div>
+        <button type="submit" class="btn btn-outline-primary">Filter</button>
+    </form>
+</div>
+
+<script>
+    $cOptions=$(".form-group #college")
+    $.get("/prod/getAllColleges",(college)=>{
+        college.forEach((i)=>{
+            $cOptions.append(`
+            <option value="${i.cName}">${i.cName}</option>
+            `)
+        })
+    })
+
+</script>
