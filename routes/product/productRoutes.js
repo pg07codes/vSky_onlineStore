@@ -15,6 +15,11 @@ route.get("/getAllColleges",(r,s)=>{
         s.send(colleges)
     })
 })
+route.get("/buy/:id",(r,s)=>{
+    ctrl.getParticularItem(r.params.id,function(data){
+        s.render("buying",{p:data})
+    })
+})
 route.post("/filter",(r,s)=>{
     console.log(r.body.college)
     ctrl.getItemByCollege(r.body.college,function (items){

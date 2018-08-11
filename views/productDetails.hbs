@@ -15,7 +15,7 @@
             <h2>{{p.name}}</h2>
         </div>
         <div class="col-md-6">
-            <h3>discounted Price: {{p.price}}</h3>
+            <h3>Our Price: {{p.price}}</h3>
             <h4>Original Retail Price: <strike>{{p.mrp}}</strike></h4>
         </div>
         <div class="col-md-8">
@@ -28,7 +28,7 @@
             <span style="padding:6px; border: solid black 1px; margin:6px;">3XL</span>
         </div>
         <div class="col-md-6 mt-3">
-            <button class="btn btn-outline-success">BUY</button>
+            <a href="/prod/buy/{{p.id}}"><input class="btn btn-outline-success" value="BUY"></a>
         </div>
     </div>
 </div>
