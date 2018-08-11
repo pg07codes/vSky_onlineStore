@@ -43,6 +43,32 @@ const college=db.define("college",{
     }
 })
 
+const order=db.define("order",{
+    id:{
+        autoIncrement:true,
+        primaryKey:true,
+        type:dt.INTEGER
+    },
+    phnNumber:{
+        allowNull:false,
+        type:dt.STRING
+    },
+    address:{
+        allowNull:false,
+        type:dt.TEXT
+    },
+    size:{
+        allowNull:false,
+        type:dt.STRING
+    },
+    refNumber:{
+        allowNull:false,
+        unique:true,
+        type:dt.STRING
+    }
+})
+
+
 item.belongsTo(college)
 college.hasMany(item)
 
@@ -52,4 +78,4 @@ db.sync({
 }).then(()=>console.log("db is synced"))
 
 
-module.exports={db,item,college}
+module.exports={db,item,college,order}

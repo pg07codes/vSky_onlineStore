@@ -2,7 +2,7 @@
     <form method="post" action="/placeOrder">
         <div class="form-group">
             <label for="number">Contact Number</label>
-            <input type="number" class="form-control" id="number" placeholder="Your contact number">
+            <input type="number" class="form-control" name="phnNumber" id="number" placeholder="Your contact number" required>
         </div>
         <div class="row">
             <div class="col-md-8">
@@ -14,11 +14,11 @@
         </div>
         <div class="form-group">
             <label for="address">Delivery Address</label>
-            <textarea class="form-control" id="address" rows="3" placeholder="where to deliver the product"></textarea>
+            <textarea class="form-control" name="address" id="address" rows="3" placeholder="where to deliver the product" required></textarea>
         </div>
         <div class="form-group">
             <label for="size">Size</label>
-            <select name="size" id="size" class="form-control">
+            <select name="size" id="size" class="form-control" required>
                 <option value="S">S</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
@@ -27,8 +27,14 @@
                 <option value="3XL">3XL</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit" id="order" class="btn btn-success">Place Order</button>
     </form>
 </div>
+<script>
+    let $order= $("#order")
+    $order.on('click',(e)=>{
+        alert("ORDER PLACED! WE WILL GET BACK TO YOU SHORTLY.")
+    })
+</script>
 
 

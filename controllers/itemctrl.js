@@ -3,6 +3,14 @@
 const item=require("../db/models.js").item
 
 module.exports={
+    randomGen:()=>{
+        let randomString = "";
+        let charSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (let i = 0; i < 10; i++)
+            randomString += charSet.charAt(Math.floor(Math.random() * charSet.length));
+        // generates random string of 10 characters
+        return randomString;
+    },
     getAllItems:(r,s,cb)=>{
         item.findAll().then((data)=>{
             cb(data)

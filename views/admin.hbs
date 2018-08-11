@@ -2,7 +2,7 @@
     <form method="post" action="/admin/addCollege">
         <div class="form-group">
             <label for="newCollege">College</label>
-            <input type="text" class="form-control" name="newCollege" id="newCollege" placeholder="College name">
+            <input type="text" class="form-control" name="newCollege" id="newCollege" placeholder="College name" required>
         </div>
         <button type="submit" class="btn btn-success">ADD</button>
     </form>
@@ -12,19 +12,19 @@
 <form method="post" action="/admin/add">
     <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
+        <input type="text" class="form-control" name="name" id="name" placeholder="Enter name" required>
     </div>
     <div class="form-group">
         <label for="mrp">Market Retail Price</label>
-        <input type="number" class="form-control" name="mrp" id="mrp" placeholder="Market Retail Price">
+        <input type="number" class="form-control" name="mrp" id="mrp" placeholder="Market Retail Price" required>
     </div>
     <div class="form-group">
         <label for="dPrice">Discounted Price</label>
-        <input type="number" class="form-control" name="dPrice" id="dPrice" placeholder="Discounted Price">
+        <input type="number" class="form-control" name="dPrice" id="dPrice" placeholder="Discounted Price" required>
     </div>
     <div class="form-group">
         <label for="college">College</label>
-        <select name="college" id="college" class="form-control">
+        <select name="college" id="college" class="form-control" required>
             <!--options generated dynamically-->
         </select>
     </div>
