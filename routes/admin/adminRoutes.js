@@ -6,9 +6,6 @@ route.get("/",(r,s)=>{
     s.render("admin")
 })
 
-route.post("/",(r,s)=>{
-
-})
 
 module.exports=route
 
