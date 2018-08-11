@@ -3,15 +3,12 @@
 const route=require("express").Router()
 const ctrl=require("../../controllers/itemctrl")
 
+route.get("/getAllProducts",(r,s)=>{
+    ctrl.getAllItems(r,s,function (products){
+        s.send(products)
+    })
 
-route.get("/",(r,s)=>{
-    s.render("admin")
 })
-route.post("/add",(r,s)=>{
-    ctrl.insertNewItem(r,s)
-    s.redirect("/admin")
-})
-
 
 module.exports=route
 

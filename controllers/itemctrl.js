@@ -3,8 +3,10 @@
 const item=require("../db/models.js").item
 
 module.exports={
-    getAllItems:()=>{
-
+    getAllItems:(r,s,cb)=>{
+        item.findAll().then((data)=>{
+            cb(data)
+        })
     },
     getItemByCollege:()=>{
 

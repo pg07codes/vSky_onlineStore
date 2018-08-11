@@ -1,0 +1,26 @@
+<div class="container allProducts">
+    <div class="row">
+
+    </div>
+
+</div>
+
+
+<script>
+    let $allProducts=$(".allProducts .row")
+    $.get("/prod/getAllProducts",(products)=>{
+        products.forEach((p)=>{
+            $allProducts.append(`
+            <div class="card prod col-md-3" style="width: 15rem;">
+                <img class="card-img-top" src="../../public/images/placeholder.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">${p.name}</h5>
+                    <p class="card-text">college ==> ${p.college}</p>
+                    <a href="#" class="btn btn-success">Buy</a>
+                </div>
+             </div>
+            `)
+        })
+    })
+
+</script>

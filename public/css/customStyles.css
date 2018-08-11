@@ -4,4 +4,9 @@ html,body{
     padding: 0;
     margin:0;
 }
-
+.allProducts .row .prod{
+    margin:10px;
+}
+.allProducts .row .col-md-3{
+    padding:0 !important;
+}
