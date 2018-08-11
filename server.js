@@ -22,6 +22,7 @@ app.engine("hbs",hbs.express4({
 app.get("/", (r, s) => {
     s.render("home")
 })
+app.use("/adminPanel",require("./routes/admin/adminRoutes"))
 
 app.listen(PORT, () =>
     console.log("up at http://localhost:"+PORT)
