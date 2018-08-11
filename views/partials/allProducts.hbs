@@ -11,8 +11,8 @@
     $.get("/prod/getAllProducts",(products)=>{
         products.forEach((p)=>{
             $allProducts.append(`
-            <div class="card prod col-md-3" style="width: 15rem;">
-                <a href=""><img class="card-img-top" src="../../public/images/placeholder.jpg" alt="Card image cap"></a>
+            <div class="card prod col-md-3" style="width:20rem;">
+                <a href="/prod/details/${p.id}"><img class="card-img-top" src="../../public/images/placeholder.jpg" alt="Card image cap"></a>
                 <div class="card-body">
                     <p class="card-text">${p.name}</p>
                     <p class="card-text">college ==> ${p.college}</p>

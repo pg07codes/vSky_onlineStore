@@ -1,0 +1,37 @@
+{{>navbar}}
+<div class="container-fluid mt-3">
+    <div class="row justify-content-around">
+        <div class="col-md-5">
+            <img src="/public/images/placeholder.jpg" style="margin:5px;" alt="shirt-front" class="img-fluid">
+        </div>
+        <div class="col-md-5">
+            <img src="/public/images/placeholder.jpg"  style="margin:5px;" alt="shirt-front" class="img-fluid">
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{p.name}}</h2>
+        </div>
+        <div class="col-md-6">
+            <h3>discounted Price: {{p.price}}</h3>
+            <h4>Original Retail Price: <strike>{{p.mrp}}</strike></h4>
+        </div>
+        <div class="col-md-8">
+            <h2>Sizes available:</h2>
+            <span style="padding:6px; border: solid black 1px; margin:6px;">S</span>
+            <span style="padding:6px; border: solid black 1px; margin:6px;">M</span>
+            <span style="padding:6px; border: solid black 1px; margin:6px;">L</span>
+            <span style="padding:6px; border: solid black 1px; margin:6px;">XL</span>
+            <span style="padding:6px; border: solid black 1px; margin:6px;">2XL</span>
+            <span style="padding:6px; border: solid black 1px; margin:6px;">3XL</span>
+        </div>
+        <div class="col-md-6 mt-3">
+            <button class="btn btn-outline-success">BUY</button>
+        </div>
+    </div>
+</div>
+
+{{>productInfo}}
+

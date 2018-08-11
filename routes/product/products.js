@@ -7,7 +7,12 @@ route.get("/getAllProducts",(r,s)=>{
     ctrl.getAllItems(r,s,function (products){
         s.send(products)
     })
+})
 
+route.get("/details/:id",(r,s)=>{
+    ctrl.getParticularItem(r.params.id,function(data){
+        s.render("productDetails",{p:data})
+    })
 })
 
 module.exports=route

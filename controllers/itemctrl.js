@@ -8,6 +8,15 @@ module.exports={
             cb(data)
         })
     },
+    getParticularItem:(id,cb)=>{
+        item.find({
+            where:{
+                id:id
+            }
+        }).then((data)=>{
+            cb(data)
+        })
+    },
     getItemByCollege:()=>{
 
     },
