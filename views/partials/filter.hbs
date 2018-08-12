@@ -44,7 +44,7 @@
                 <a href="/prod/details/${p.id}"><img class="card-img-top" src="../../public/images/placeholder.jpg" alt="Card image cap"></a>
                 <div class="card-body">
                     <p class="card-text">${p.name}</p>
-                    <button class="btn btn-sm btn-danger add">ADD TO CART</button>
+                    <button class="btn btn-sm btn-danger add" onclick='save(${JSON.stringify(p)})'>ADD TO CART</button>
                 </div>
              </div>
             `)
@@ -59,9 +59,9 @@
         })
     })
 
-    $(".filteredProducts .row ").on('click',".add",(e)=>{
-        // use local storage here
+    function save(p){
+        let stringP=JSON.stringify(p)
+        localStorage.setItem(`product${p.id}`,stringP)
         alert("Product Added to Cart")
-    })
-
+    }
 </script>

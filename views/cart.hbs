@@ -1,0 +1,33 @@
+<div class="container cart">
+    <div class="row justify-content-center">
+        <ul class="list-group col-md-8">
+
+        </ul>
+        <!--cart items dynamically comes in here-->
+
+    </div>
+</div>
+
+<script>
+    let $cart=$(".cart .list-group")
+    $cart.empty()
+    for (let key in localStorage) {
+        if (localStorage.hasOwnProperty(key)) {
+            let temp=JSON.parse(localStorage[key])
+            console.log(localStorage[key])
+            $cart.append(`
+                          <li class="list-group-item" style="margin: 3px 3px; "><span style="margin: 5px 20px;">ITEM NAME:  ${temp.name}</span>
+                        <span style="margin: 5px 20px;">ITEM PRICE: ${temp.price}</span>
+                        <button style="margin: 5px 20px; float: right;" class="btn btn-sm btn-danger" onclick="remove(${temp.id})">remove</button>
+                        </li>
+
+                        `)
+        }
+    }
+
+    function remove(id){
+        localStorage.removeItem('product'+id)
+        location.reload()
+    }
+
+</script>

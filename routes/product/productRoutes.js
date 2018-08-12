@@ -25,6 +25,10 @@ route.post("/filter",(r,s)=>{
         s.send(items)
     })
 })
+route.get("/mycart",(r,s)=>{
+    s.render("cart")
+})
+
 route.get("/details/:id",(r,s)=>{
     ctrl.getParticularItem(r.params.id,function(data){
         s.render("productDetails",{p:data})
