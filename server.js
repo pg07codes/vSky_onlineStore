@@ -37,10 +37,32 @@ app.post("/placeOrder",(r,s)=>{
     orderCtrl.insertNewOrder(r,s,function(orderSummary){
         let summary=JSON.stringify(orderSummary)
         summary=base64.encode(summary)
-        s.redirect(`/?info=${summary}`)
+        s.redirect(`/orderDetails?info=${summary}`)
     })
 
 })
+app.get("/orderDetails",(r,s)=>{
+    let temp;
+    if(r.query.info===undefined)
+        s.redirect("/")
+    else{
+        try{
+            temp=JSON.parse(base64.decode(r.query.info)).refNumber
+            console.log(temp)
+        }
+        catch(e){
+            console.log("error")
+            s.redirect("/")
+        }
+        s.send(`<div style="width:600px; margin:15% auto;">
+                <h1 >PLEASE NOTE YOUR PURCHASE REFERENCE NUMBER: <i>${temp}</i> </h1>
+                <p>close this tab for security reasons.</p>
+                </div>
+`)
+    }
+
+})
+
 
 app.use("/admin",require("./routes/admin/adminRoutes"))
 app.use("/prod",require("./routes/product/productRoutes"))
