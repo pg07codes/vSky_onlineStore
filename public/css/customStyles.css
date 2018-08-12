@@ -16,7 +16,14 @@ html,body{
 .filteredProducts .row .col-md-3{
     padding:0 !important;
 }
+.about{
+    min-height:80%;
+    background:whitesmoke;
+}.contacts{
+     min-height:80%;
+     background:whitesmoke;
+ }
 .footer{
-    height:70%;
+    min-height:40%;
     background:#292929;
 }

@@ -12,12 +12,19 @@
     </form>
 </div>
 
-<div class="container-fluid filteredProducts" style="background:lightgreen">
+<div class="container-fluid filteredProducts" style="background:whitesmoke">
     <div class="row justify-content-around">
         <!--filtered results will come here-->
 
     </div>
+</div>
 
+<div class="container-fluid mt-4 mb-4 subHeader" style="display: none;">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2>other recommended options you may like..</h2>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -31,6 +38,7 @@
     })
     let $filteredProducts=$(".filteredProducts .row")
     $("#filter").on('click',(e)=>{
+        $(".subHeader").css({"display":"block"})
         $filteredProducts.empty()
         $filteredProducts.append(`
          <h2 class="col-md-12 text-center mt-3 mb-3">FILTERED RESULTS</h2>`)

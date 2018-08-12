@@ -1,3 +1,4 @@
+{{>navbar}}
 <div class="container cart">
     <div class="row justify-content-center">
         <ul class="list-group col-md-8">
@@ -15,7 +16,7 @@
         if (localStorage.hasOwnProperty(key)) {
             let temp=JSON.parse(localStorage[key])
             $cart.append(`
-                          <li class="list-group-item" style="margin: 3px 3px; "><span style="margin: 5px 20px;">ITEM NAME:  ${temp.name}</span>
+                          <li class="list-group-item" style="margin: 15px 10px; "><span style="margin: 5px 20px;">ITEM NAME:  ${temp.name}</span>
                         <span style="margin: 5px 20px;">ITEM PRICE: ${temp.price}</span>
                         <button style="margin: 5px 10px; float: right;" class="btn btn-sm btn-danger" onclick="remove(${temp.id})">REMOVE</button>
                         <a href="/prod/buy/${temp.id}" style="margin: 5px 10px; float: right;" class="btn btn-sm btn-success">BUY</a>
