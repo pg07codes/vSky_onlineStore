@@ -1,18 +1,21 @@
 <div class="container mt-3 mb-3">
     <form>
-        <div class="form-group">
-            <label for="college">Filter Results By College</label>
-            <select name="college" id="college" class="form-control">
-                <!--options generated dynamically-->
-            </select>
+        <div class="row">
+            <div class="form-group col-md-10">
+                <select name="college" id="college" class="form-control">
+                    <!--options generated dynamically except the defaulat one-->
+                    <option disabled selected>Filter Products By College</option>
+                </select>
+            </div>
+            <button type="submit" id="filter" class="btn btn-outline-success col-md-2">Filter</button>
         </div>
-        <button type="submit" id="filter" class="btn btn-outline-primary">Filter</button>
     </form>
 </div>
 
-<div class="container-fluid filteredProducts" style="background: darkgreen">
+<div class="container-fluid filteredProducts" style="background:lightgreen">
     <div class="row justify-content-around">
         <!--filtered results will come here-->
+
     </div>
 
 </div>
@@ -29,6 +32,8 @@
     let $filteredProducts=$(".filteredProducts .row")
     $("#filter").on('click',(e)=>{
         $filteredProducts.empty()
+        $filteredProducts.append(`
+         <h2 class="col-md-12 text-center mt-3 mb-3">FILTERED RESULTS</h2>`)
         e.preventDefault()
         let id=$("#college").find(":selected").val()
         $.post("/prod/filter",{college:id},(products)=>{

@@ -21,7 +21,6 @@ route.get("/buy/:id",(r,s)=>{
     })
 })
 route.post("/filter",(r,s)=>{
-    console.log(r.body.college)
     ctrl.getItemByCollege(r.body.college,function (items){
         s.send(items)
     })
