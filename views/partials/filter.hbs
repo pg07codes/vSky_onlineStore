@@ -44,14 +44,24 @@
                 <a href="/prod/details/${p.id}"><img class="card-img-top" src="../../public/images/placeholder.jpg" alt="Card image cap"></a>
                 <div class="card-body">
                     <p class="card-text">${p.name}</p>
+                    <button class="btn btn-sm btn-danger add">ADD TO CART</button>
                 </div>
              </div>
             `)
                 })
             }
             else
-                console.log("nothing found")
+            {
+                $filteredProducts.empty()
+                $filteredProducts.append(`
+                    <h2 class="col-md-12 text-center mt-3 mb-3">NO RESULTS. PLEASE TRY OTHER OPTIONS.</h2>`)
+            }
         })
+    })
+
+    $(".filteredProducts .row ").on('click',".add",(e)=>{
+        // use local storage here
+        alert("Product Added to Cart")
     })
 
 </script>

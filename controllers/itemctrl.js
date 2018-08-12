@@ -26,13 +26,11 @@ module.exports={
         })
     },
     getItemByCollege:(cId,cb)=>{
-        console.log(cId)
         item.findAll({
             where:{
                 collegecId:cId
             }
         }).then((data)=>{
-            console.log(data);
             cb(data)
         })
 
