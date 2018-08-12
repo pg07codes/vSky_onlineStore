@@ -4,6 +4,10 @@ html,body{
     padding: 0;
     margin:0;
 }
+.prod .card-img-top:hover{
+    transform: scale(1.07);
+    box-shadow: grey 2px 1px;
+}
 .allProducts .row .prod{
     margin:10px;
 }
