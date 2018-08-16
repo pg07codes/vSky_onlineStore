@@ -12,7 +12,7 @@
         products.forEach((p)=>{
             $allProducts.append(`
             <div class="card prod col-md-3 mt-2 mb-2" style="width:20rem;">
-                <a href="/prod/details/${p.id}"><img class="card-img-top" src="../../public/images/placeholder.jpg" alt="Card image cap"></a>
+                <a href="/prod/details/${p.id}"><img class="card-img-top" src="${p.fImage}" alt="Card image cap"></a>
                 <div class="card-body">
                     <h4 class="card-text">${p.name}</h4>
                     <button class="btn btn-sm btn-danger add" onclick='save(${JSON.stringify(p)})'>ADD TO CART</button>

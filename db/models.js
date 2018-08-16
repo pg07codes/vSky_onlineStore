@@ -21,6 +21,10 @@ const item=db.define("item",{
         allowNull:false,
         type:dt.STRING
     },
+    desc:{
+        allowNull:false,
+        type:dt.STRING
+    },
     price:{
         allowNull:false,
         type:dt.INTEGER
@@ -28,7 +32,16 @@ const item=db.define("item",{
     mrp:{
         allowNull:false,
         type:dt.INTEGER
+    },
+    fImage:{
+        allowNull:false,
+        type:dt.STRING
+    },
+    bImage:{
+        allowNull:false,
+        type:dt.STRING
     }
+
 })
 
 const college=db.define("college",{

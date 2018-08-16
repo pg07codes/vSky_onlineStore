@@ -38,8 +38,11 @@ module.exports={
     insertNewItem:(r,s)=>{
         item.create({
             name:r.body.name,
+            desc:r.body.desc,
             price:r.body.dPrice,
             mrp:r.body.mrp,
+            fImage:r.body.fImage,
+            bImage:r.body.bImage,
             collegeCId:r.body.college
         })
     },
