@@ -1,7 +1,7 @@
 {{>navbar}}
-<div class="container cart">
+<div class="container-fluid cart">
     <div class="row justify-content-center">
-        <ul class="list-group col-md-10">
+        <ul class="list-group col-md-12">
 
         </ul>
         <!--cart items dynamically comes in here-->
@@ -19,8 +19,8 @@
                           <li class="list-group-item" style="margin: 15px 10px; ">
                         <img src=${temp.fImage} alt="product image" style="height: 60px; width:80px;">
                         <span style="margin: 5px 20px;">ITEM NAME:  ${temp.name}</span>
-                        <span style="margin: 5px 20px;">ITEM PRICE: ${temp.price}</span>
-                        <span style="margin: 5px 20px;">PRICE BEFORE DISCOUNT:${temp.mrp}</span>
+                        <span style="margin: 5px 20px;">ITEM PRICE: <i class="fas fa-rupee-sign fa-sm"></i>${temp.price}</span>
+                        <span style="margin: 5px 20px;">PRICE BEFORE DISCOUNT:<i class="fas fa-rupee-sign fa-sm"></i>${temp.mrp}</span>
                         <button style="margin: 5px 10px; float: right;" class="btn btn-sm btn-danger" onclick="remove(${temp.id})">REMOVE</button>
                         <a href="/prod/buy/${temp.id}" style="margin: 5px 10px; float: right;" class="btn btn-sm btn-success">BUY</a>
                         </li>
