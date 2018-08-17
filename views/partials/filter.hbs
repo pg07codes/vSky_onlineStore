@@ -19,14 +19,6 @@
     </div>
 </div>
 
-<div class="container-fluid mt-4 mb-4 subHeader" style="display: none;">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <h2>other recommended options you may like..</h2>
-        </div>
-    </div>
-</div>
-
 <script>
     $cOptions=$(".form-group #college")
     $.get("/prod/getAllColleges",(college)=>{
@@ -36,18 +28,22 @@
             `)
         })
     })
+    let $college=$("#college")
     let $filteredProducts=$(".filteredProducts .row")
     $("#filter").on('click',(e)=>{
-        $(".subHeader").css({"display":"block"})
-        $filteredProducts.empty()
-        $filteredProducts.append(`
+        if($college.find(":selected").val()==="Filter Products By College"){}
+        else
+        {
+            $(".allProducts").css({"display":"none"})
+            $filteredProducts.empty()
+            $filteredProducts.append(`
          <h2 class="col-md-12 text-center mt-3 mb-3">FILTERED RESULTS</h2>`)
-        e.preventDefault()
-        let id=$("#college").find(":selected").val()
-        $.post("/prod/filter",{college:id},(products)=>{
-            if(products.length!==0){
-                products.forEach((p)=>{
-                    $filteredProducts.append(`
+            e.preventDefault()
+            let id=$college.find(":selected").val()
+            $.post("/prod/filter",{college:id},(products)=>{
+                if(products.length!==0){
+                    products.forEach((p)=>{
+                        $filteredProducts.append(`
             <div class="card prod col-md-3" style="width:20rem;">
                 <a href="/prod/details/${p.id}"><img class="card-img-top" src="${p.fImage}" alt="Card image cap"></a>
                 <div class="card-body">
@@ -56,15 +52,17 @@
                 </div>
              </div>
             `)
-                })
-            }
-            else
-            {
-                $filteredProducts.empty()
-                $filteredProducts.append(`
+                    })
+                }
+                else
+                {
+                    $(".allProducts").css({"display":"block"})
+                    $filteredProducts.empty()
+                    $filteredProducts.append(`
                     <h2 class="col-md-12 text-center mt-3 mb-3">NO RESULTS. PLEASE TRY OTHER OPTIONS.</h2>`)
-            }
-        })
+                }
+            })
+        }
     })
 
     function save(p){
