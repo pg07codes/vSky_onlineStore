@@ -36,6 +36,8 @@ module.exports={
             phnNumber:r.body.phnNumber,
             address:r.body.address,
             size:r.body.size,
+            pin:r.body.pin,
+            landmark:r.body.landmark,
             refNumber:refNumber
         }).then((data)=>{
             cb(data)

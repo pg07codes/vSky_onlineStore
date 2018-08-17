@@ -79,10 +79,22 @@ const order=db.define("order",{
         allowNull:false,
         type:dt.STRING
     },
+    landmark:{
+        allowNull:false,
+        type:dt.STRING
+    },
+    pin:{
+        allowNull:false,
+        type:dt.INTEGER
+    },
     refNumber:{
         allowNull:false,
         unique:true,
         type:dt.STRING
+    },
+    delivered:{
+        defaultValue:false,
+        type:dt.BOOLEAN
     }
 })
 

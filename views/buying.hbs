@@ -7,20 +7,7 @@
         </div>
         <div class="form-group">
             <label for="number">Contact Number</label>
-            <input type="number" class="form-control" name="phnNumber" id="number" placeholder="Your contact number" required>
-        </div>
-        <div class="row">
-            <div class="col-md-7">
-
-                <h2><i class="fas fa-arrow-right" style="color: grey; padding:3px;"></i>{{p.name}}</h2>
-            </div>
-            <div class="col-md-5">
-                <h3><i class="fas fa-arrow-right" style="color: grey; padding:3px;"></i>Total Amount Payable:<i class="fas fa-rupee-sign"></i> {{p.price}}</h3>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="address">Delivery Address</label>
-            <textarea class="form-control" name="address" id="address" rows="3" placeholder="where to deliver the product" required></textarea>
+            <input type="number" pattern="/[0-9]{10}/" class="form-control" name="phnNumber" id="number" placeholder="Your 10 digit contact number" required>
         </div>
         <div class="form-group">
             <label for="size">Size</label>
@@ -33,9 +20,32 @@
                 <option value="3XL">3XL</option>
             </select>
         </div>
+        <div class="row">
+            <div class="col-md-7">
+                <span>ITEM NAME</span>
+                <h2><i class="fas fa-arrow-right" style="color: grey; margin:5px;"></i>{{p.name}}</h2>
+            </div>
+            <div class="col-md-5">
+                <span>PAYABLE</span>
+                <h2><i class="fas fa-arrow-right" style="color: grey; margin:5px;"></i>Total Amount:<i class="fas fa-rupee-sign"></i> {{p.price}}</h2>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="address">Delivery Address</label>
+            <textarea class="form-control" name="address" id="address" rows="3" placeholder="where to deliver the product" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="landmark">Nearest Landmark</label>
+            <input type="text" class="form-control" name="landmark" id="landmark" placeholder="nearest landmark" required>
+        </div>
+        <div class="form-group">
+            <label for="pin">PinCode</label>
+            <input type="number" pattern="/[0-9]{6}/" class="form-control" name="pin" id="pin" placeholder="Pin Code" required>
+        </div>
         <button type="submit" id="order" class="btn btn-success">Place Order</button>
     </form>
 </div>
+{{>footer}}
 
 
 
