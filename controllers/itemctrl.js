@@ -1,6 +1,8 @@
 /*created by Pranav Gupta (pg07codes) on 10-08-2018 */
 
 const item=require("../db/models.js").item
+const college=require("../db/models.js").college
+const Op = require('sequelize').Op
 
 module.exports={
     randomGen:()=>{
@@ -25,10 +27,32 @@ module.exports={
             cb(data)
         })
     },
+    getItemsWithIds:(pIds,cb)=>{
+        console.log(pIds)
+        item.findAll({
+            where:{
+                id:id
+            }
+        }).then((data)=>{
+            cb(data)
+        })
+    },
     getItemByCollege:(cId,cb)=>{
         item.findAll({
             where:{
                 collegecId:cId
+            }
+        }).then((data)=>{
+            cb(data)
+        })
+    },
+    getInfoOfItemsExceptOne:(cId,pId,cb)=>{
+        item.findAll({
+            where:{
+                CollegeCId:cId,
+                id:{
+                    [Op.notIn]:[pId]
+                }
             }
         }).then((data)=>{
             cb(data)

@@ -3,6 +3,7 @@ const express = require("express")
 const path = require("path")
 const hbs=require("express-hbs")
 const base64=require("base-64")
+const randomGen=require("./controllers/itemctrl").randomGen
 
 const PORT=process.env.PORT || 8888
 const app = express()
@@ -35,8 +36,7 @@ app.get("/aboutus",(r,s)=>{
 
 app.post("/placeOrder",(r,s)=>{
     orderCtrl.insertNewOrder(r,s,function(orderSummary){
-        let summary=JSON.stringify(orderSummary)
-        summary=base64.encode(summary)
+        let summary=base64.encode(JSON.stringify(orderSummary))
         s.redirect(`/orderDetails?info=${summary}`)
     })
 

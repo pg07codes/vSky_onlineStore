@@ -14,10 +14,16 @@ html,body{
 .filteredProducts .row .prod{
     margin:10px;
 }
+.recommendations .row .prod{
+    margin:10px;
+}
 .allProducts .row .col-md-3{
     padding:0 !important;
 }
 .filteredProducts .row .col-md-3{
+    padding:0 !important;
+}
+.recommendations .row .col-md-3{
     padding:0 !important;
 }
 .about{

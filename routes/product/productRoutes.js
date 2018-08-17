@@ -20,6 +20,11 @@ route.get("/buy/:id",(r,s)=>{
         s.render("buying",{p:data})
     })
 })
+route.get("/sameCollegeProducts",(r,s)=>{
+    ctrl.getInfoOfItemsExceptOne(r.query.cId,r.query.pId,function(products){
+            s.send(products)
+    })
+})
 route.post("/filter",(r,s)=>{
     ctrl.getItemByCollege(r.body.college,function (items){
         s.send(items)

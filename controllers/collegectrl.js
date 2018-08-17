@@ -18,8 +18,22 @@ module.exports={
         })
     },
     insertNewCollege:(r,s)=>{
-        college.create({
+        try{
+            college.create({
             cName:r.body.newCollege
+        })
+        }catch (e){
+            console.log(e)
+        }
+
+    },
+    getNameFromId:(id,cb)=>{
+        college.find({
+            where:{
+                cId:id
+            }
+        }).then((data)=>{
+            cb(data.cName)
         })
     }
 }

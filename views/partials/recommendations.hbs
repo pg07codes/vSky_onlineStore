@@ -1,0 +1,39 @@
+<div class="container recommendations">
+    <div class="row justify-content-around">
+
+    </div>
+
+</div>
+
+
+<script>
+    let $recommendations=$(".recommendations .row")
+    $.get(`/prod/sameCollegeProducts?cId={{p.collegeCId}}&pId={{p.id}}`,(products)=>{
+        if(products.length!==0){
+            products.forEach((p)=>{
+                $recommendations.append(`
+            <div class="card prod col-md-3 mt-2 mb-2" style="width:20rem;">
+                <a href="/prod/details/${p.id}"><img class="card-img-top" src="${p.fImage}" alt="Card image cap"></a>
+                <div class="card-body">
+                    <h4 class="card-text">${p.name}</h4>
+                    <button class="btn btn-sm btn-danger add" onclick='save(${JSON.stringify(p)})'>ADD TO CART</button>
+                </div>
+             </div>
+            `)
+            })
+        }
+        else{
+            $recommendations.append(`
+                <div class="col-md-8">
+                <h3>Sorry , It's the only shirt of this college.</h3>
+                </div>
+            `)
+        }
+
+    })
+    function save(p){
+        let stringP=JSON.stringify(p)
+        localStorage.setItem(`product${p.id}`,stringP)
+        alert("Product Added to Cart")
+    }
+</script>

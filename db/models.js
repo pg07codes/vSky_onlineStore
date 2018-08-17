@@ -52,7 +52,8 @@ const college=db.define("college",{
     },
     cName:{
         allowNull:false,
-        type:dt.STRING
+        type:dt.STRING,
+        unique:true
     }
 })
 
@@ -61,6 +62,10 @@ const order=db.define("order",{
         autoIncrement:true,
         primaryKey:true,
         type:dt.INTEGER
+    },
+   name:{
+        allowNull:false,
+        type:dt.STRING
     },
     phnNumber:{
         allowNull:false,

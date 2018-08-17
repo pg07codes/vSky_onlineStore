@@ -32,6 +32,7 @@ module.exports={
     insertNewOrder:(r,s,cb)=>{
         let refNumber=ctrl.randomGen()
         order.create({
+            name:r.body.name,
             phnNumber:r.body.phnNumber,
             address:r.body.address,
             size:r.body.size,

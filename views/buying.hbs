@@ -2,6 +2,10 @@
 <div class="container mt-4 mb-4">
     <form method="post" action="/placeOrder">
         <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
             <label for="number">Contact Number</label>
             <input type="number" class="form-control" name="phnNumber" id="number" placeholder="Your contact number" required>
         </div>
@@ -10,7 +14,7 @@
                 <h2>{{p.name}}</h2>
             </div>
             <div class="col-md-4">
-                <h3>Total Amount: {{p.price}}</h3>
+                <h3>Total Amount Payable: {{p.price}}</h3>
             </div>
         </div>
         <div class="form-group">
