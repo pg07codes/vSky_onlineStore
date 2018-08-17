@@ -1,9 +1,13 @@
 
 const express = require("express")
+const session = require("express-session")
 const path = require("path")
 const hbs=require("express-hbs")
 const base64=require("base-64")
+const config=require("./config.json").SECRET
 const randomGen=require("./controllers/itemctrl").randomGen
+const passport=require("./passport")
+
 
 const PORT=process.env.PORT || 8888
 const app = express()
@@ -13,7 +17,18 @@ const orderCtrl=require("./controllers/orderctrl")
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
+app.use(session({
+    secret: config.secret,
+    resave: false,
+    saveUninitialized:false,
+}))
 app.use("/public", express.static(path.join(__dirname, "public")))
+app.use(passport.initialize())
+app.use(passport.session())
+
+
+
+
 
 //setting up of the view engine
 app.set("view engine","hbs")
@@ -63,10 +78,14 @@ app.get("/orderDetails",(r,s)=>{
 
 })
 
-
+app.use("/auth",require("./routes/auth/authRoutes"))
 app.use("/admin",require("./routes/admin/adminRoutes"))
 app.use("/prod",require("./routes/product/productRoutes"))
 
+// in case of invalid request redirect to home
+app.use((r,s)=>{
+    s.redirect("/")
+})
 app.listen(PORT, () =>
     console.log("up at http://localhost:"+PORT)
 )

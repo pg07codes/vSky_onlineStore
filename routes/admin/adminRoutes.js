@@ -7,20 +7,41 @@ const orderCtrl=require("../../controllers/orderctrl")
 
 
 route.get("/",(r,s)=>{
-    s.render("admin")
+    if(r.isAuthenticated())
+        s.render("admin")
+    else
+        s.redirect("/")
 })
 route.post("/add",(r,s)=>{
-    ctrl.insertNewItem(r,s)
-    s.redirect("/admin")
+    if(r.isAuthenticated())
+    {
+        ctrl.insertNewItem(r,s)
+        s.redirect("/admin")
+    }
+    else
+        s.redirect("/")
+
+
 })
 route.post("/addCollege",(r,s)=>{
-    collegeCtrl.insertNewCollege(r,s)
-    s.redirect("/admin")
+    if(r.isAuthenticated())
+    {
+        collegeCtrl.insertNewCollege(r,s)
+        s.redirect("/admin")
+    }
+    else
+        s.redirect("/")
 })
+
 route.get("/orders",(r,s)=>{
-    orderCtrl.getAllOrders(r,s,function(orders){
-        s.send(orders)
-    })
+    if(r.isAuthenticated())
+    {
+        orderCtrl.getAllOrders(r,s,function(orders){
+            s.send(orders)
+        })
+    }
+    else
+        s.redirect("/")
 })
 
 

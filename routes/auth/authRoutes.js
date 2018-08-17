@@ -4,13 +4,21 @@ const route=require("express").Router()
 const ctrl=require("../../controllers/itemctrl")
 const collegeCtrl=require("../../controllers/collegectrl")
 const orderCtrl=require("../../controllers/orderctrl")
+const passport=require("../../passport")
 
 
 route.get("/",(r,s)=>{
-    s.render("auth")
+    if(r.isAuthenticated())
+        s.redirect("/admin")
+    else
+        s.render("auth")
 })
 
-route.post("/",)
+route.post("/",passport.authenticate('local',{
+    successRedirect:"/admin",
+    failureRedirect:"/auth"
+})
+)
 
 
 module.exports=route
