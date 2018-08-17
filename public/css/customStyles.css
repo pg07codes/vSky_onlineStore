@@ -16,7 +16,7 @@ html,body{
 }
 .productDetails{
     background:whitesmoke;
-    padding:20px;
+    padding:25px;
     border: dashed 1px grey;
 }
 .recommendations .row .prod{
