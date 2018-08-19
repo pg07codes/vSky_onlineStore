@@ -1,2 +1,2 @@
 ## Venture Sky
-Visit [my link](https://www.venturesky.in/) to know more.
+Visit [Site](https://www.venturesky.in/) to know more.
