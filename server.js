@@ -5,7 +5,7 @@ const session = require("express-session")
 const path = require("path")
 const hbs=require("express-hbs")
 const base64=require("base-64")
-const config=require("./config.json").SECRET
+//const config=require("./config.json").SECRET
 const randomGen=require("./controllers/itemctrl").randomGen
 const passport=require("./passport")
 
