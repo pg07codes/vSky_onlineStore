@@ -2,7 +2,7 @@
 
 const LocalStrategy = require('passport-local').Strategy
 const passport=require('passport')
-const credentials=require("../config").CREDENTIALS
+//const credentials=require("../config").CREDENTIALS
 
 const localStrategy = new LocalStrategy(
     (username, password, done) => {
