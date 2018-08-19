@@ -40,7 +40,7 @@ module.exports={
     getItemByCollege:(cId,cb)=>{
         item.findAll({
             where:{
-                collegecId:cId
+                collegeCId:cId
             }
         }).then((data)=>{
             cb(data)
@@ -49,7 +49,7 @@ module.exports={
     getInfoOfItemsExceptOne:(cId,pId,cb)=>{
         item.findAll({
             where:{
-                CollegeCId:cId,
+                collegeCId:cId,
                 id:{
                     [Op.notIn]:[pId]
                 }
