@@ -8,8 +8,8 @@ const localStrategy = new LocalStrategy(
     (username, password, done) => {
         if((username===credentials.username)&&(password===credentials.password)){
             let user={
-                username:credentials.username,
-                password:credentials.password
+                username:process.env.LOGIN_USER,
+                password:process.env.LOGIN_PASS
             }
             done(null,user)
         }

@@ -3,7 +3,6 @@
 const Sequelize=require('sequelize')
 const dt=Sequelize.DataTypes
 const dbconfig=require('../config').DB
-process.env.DATABASE_URL=`postgres://${dbconfig.USER}:${dbconfig.PASSWORD}@localhost:5432/${dbconfig.NAME}`
 
 // const db=new Sequelize(dbconfig.NAME,dbconfig.USER,dbconfig.PASSWORD,{
 //     dialect:'postgres',

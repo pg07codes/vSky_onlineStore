@@ -1,3 +1,4 @@
+require("dotenv").config()
 
 const express = require("express")
 const session = require("express-session")
@@ -18,7 +19,7 @@ const orderCtrl=require("./controllers/orderctrl")
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(session({
-    secret: config.secret,
+    secret:process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized:false,
 }))
