@@ -6,7 +6,7 @@ const passport=require('passport')
 
 const localStrategy = new LocalStrategy(
     (username, password, done) => {
-        if((username===credentials.username)&&(password===credentials.password)){
+        if((username===process.env.LOGIN_USER)&&(password===process.env.LOGIN_PASS)){
             let user={
                 username:process.env.LOGIN_USER,
                 password:process.env.LOGIN_PASS
