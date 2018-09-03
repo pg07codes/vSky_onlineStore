@@ -97,6 +97,10 @@ const order=db.define("order",{
     delivered:{
         defaultValue:false,
         type:dt.BOOLEAN
+    },
+    quantity:{
+        allowNull:false,
+        type:dt.INTEGER
     }
 })
 

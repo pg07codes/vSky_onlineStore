@@ -13,6 +13,15 @@ html,body{
     box-shadow: grey 2px 1px 4px;
     transition: transform 500ms;
 }
+.cart img{
+    transform: scale(1.0);
+    transition: transform 500ms;
+}
+.cart img:hover{
+    transform: scale(1.2);
+    transition: transform 500ms;
+}
+
 .allProducts .row .prod{
     margin:10px;
 }

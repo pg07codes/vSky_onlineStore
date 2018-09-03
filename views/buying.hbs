@@ -27,8 +27,22 @@
             </div>
             <div class="col-md-5">
                 <span>PAYABLE</span>
-                <h2><i class="fas fa-arrow-right" style="color: grey; margin:5px;"></i>Total Amount:<i class="fas fa-rupee-sign"></i> {{p.price}}</h2>
+                <h2 id="amount"><i class="fas fa-arrow-right" style="color: grey; margin:5px;"></i>Total Amount:<i class="fas fa-rupee-sign"></i>{{p.price}}</h2>
             </div>
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <select name="quantity" onchange="updateAmount({{p.price}})" id="quantity" class="form-control" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
         </div>
         <div class="form-group">
             <label for="address">Delivery Address</label>
@@ -46,6 +60,18 @@
     </form>
 </div>
 {{>footer}}
+<script>
+    $quantity=$("#quantity")
+    $amount=$("#amount")
+    function updateAmount(price){
+        $amount.empty()
+        $amount.append(`<i
+                        class="fas fa-arrow-right"
+                        style="color: grey; margin:5px;">
+                        </i>Total Amount:<i class="fas fa-rupee-sign"></i>
+                        ${$quantity.val()*price}`)
+    }
+</script>
 
 
 

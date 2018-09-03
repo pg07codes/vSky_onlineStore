@@ -38,7 +38,8 @@ module.exports={
             size:r.body.size,
             pin:r.body.pin,
             landmark:r.body.landmark,
-            refNumber:refNumber
+            refNumber:refNumber,
+            quantity:r.body.quantity
         }).then((data)=>{
             cb(data)
         })

@@ -17,7 +17,7 @@
             let temp=JSON.parse(localStorage[key])
             $cart.append(`
                           <li class="list-group-item" style="margin: 15px 10px; ">
-                        <img src=${temp.fImage} alt="product image" style="height: 60px; width:80px;">
+                        <a href="/prod/details/${temp.id}"><img src=${temp.fImage} alt="product image" style="height: 60px; width:80px;"></a>
                         <span style="margin: 5px 20px;">ITEM NAME:  ${temp.name}</span>
                         <span style="margin: 5px 20px;">ITEM PRICE: <i class="fas fa-rupee-sign fa-sm"></i>${temp.price}</span>
                         <span style="margin: 5px 20px;">PRICE BEFORE DISCOUNT:<i class="fas fa-rupee-sign fa-sm"></i>${temp.mrp}</span>
