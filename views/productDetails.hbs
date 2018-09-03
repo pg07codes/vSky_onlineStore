@@ -47,6 +47,9 @@
 {{>recommendations}}
 <script>
     function save(p){
+        let $cartItems=$(".shopping-cart")
+        $cartItems.empty()
+        $cartItems.append(`${Object.keys(localStorage).length+1}`)
         let stringP=JSON.stringify(p)
         localStorage.setItem(`product${p.id}`,stringP)
         alert("Product Added to Cart")

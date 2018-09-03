@@ -21,7 +21,6 @@ html,body{
     transform: scale(1.2);
     transition: transform 500ms;
 }
-
 .allProducts .row .prod{
     margin:10px;
 }

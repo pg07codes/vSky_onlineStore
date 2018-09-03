@@ -19,7 +19,11 @@
             </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item align-content-right">
-                        <a class="nav-link" title="My Cart" href="/prod/mycart"><i class="fas fa-3x fa-shopping-cart"></i></a>
+                        <a class="nav-link" title="My Cart" href="/prod/mycart"><i
+                                class="fas fa-3x fa-shopping-cart">
+                            <span class="shopping-cart" style="font-size: 0.6em; position:relative;bottom:22px;"></span>
+                        </i>
+                        </a>
                     </li>
                 </ul>
 
@@ -32,3 +36,7 @@
         </div>
     </nav>
 </div>
+<script>
+let $cartItems=$(".shopping-cart")
+$cartItems.append(`${Object.keys(localStorage).length}`)
+</script>
