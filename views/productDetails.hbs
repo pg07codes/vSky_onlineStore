@@ -1,10 +1,10 @@
 {{>navbar}}
-<div class="container-fluid mt-3">
+<div class="container images mt-3">
     <div class="row justify-content-around">
-        <div class="col-md-5">
+        <div class="col-md-4">
             <img src="{{p.fImage}}" style="margin:5px; width:480px; height:300px;" alt="shirt-front" class="img-fluid">
         </div>
-        <div class="col-md-5">
+        <div class="col-md-4">
             <img src="{{p.bImage}}" style="margin:5px; width:480px; height:300px;" alt="shirt-front" class="img-fluid">
         </div>
     </div>
@@ -52,4 +52,16 @@
         alert("Product Added to Cart")
     }
 </script>
+
+<style>
+    .images img{
+        transform: scale(1);
+        transition: transform 1s, box-shadow 800ms;
+    }
+    .images img:hover{
+        transform: scale(1.2);
+        transition: transform 1s;
+        box-shadow: grey 2px 1px 4px;
+    }
+</style>
 
