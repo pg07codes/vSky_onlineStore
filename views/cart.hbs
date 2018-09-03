@@ -21,7 +21,7 @@
                         <span style="margin: 5px 20px;">ITEM NAME:  ${temp.name}</span>
                         <span style="margin: 5px 20px;">ITEM PRICE: <i class="fas fa-rupee-sign fa-sm"></i>${temp.price}</span>
                         <span style="margin: 5px 20px;">PRICE BEFORE DISCOUNT:<i class="fas fa-rupee-sign fa-sm"></i>${temp.mrp}</span>
-                        <button style="margin: 5px 10px; float: right;" class="btn btn-sm btn-danger" onclick="remove(${temp.id})">REMOVE</button>
+                        <i  onclick="remove(${temp.id})" class="fas fa-2x fa-trash-alt" style="color:rgba(200,0,0,0.5);float: right; margin: 5px 10px;"></i>
                         <a href="/prod/buy/${temp.id}" style="margin: 5px 10px; float: right;" class="btn btn-sm btn-success">BUY</a>
                         </li>
 

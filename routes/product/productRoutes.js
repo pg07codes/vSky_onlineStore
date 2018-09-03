@@ -36,7 +36,7 @@ route.get("/mycart",(r,s)=>{
 
 route.get("/details/:id",(r,s)=>{
     ctrl.getParticularItem(r.params.id,function(data){
-        s.render("productDetails",{p:data})
+        s.render("productDetails",{p:data,StringifiedP:JSON.stringify(data)})
     })
 })
 
