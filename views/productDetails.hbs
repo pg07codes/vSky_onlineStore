@@ -45,6 +45,7 @@
 </div>
 
 {{>recommendations}}
+{{>footer}}
 <script>
     function save(p){
         let $cartItems=$(".shopping-cart")
@@ -56,15 +57,4 @@
     }
 </script>
 
-<style>
-    .images img{
-        transform: scale(1);
-        transition: transform 1s, box-shadow 800ms;
-    }
-    .images img:hover{
-        transform: scale(1.2);
-        transition: transform 1s;
-        box-shadow: grey 2px 1px 4px;
-    }
-</style>
 

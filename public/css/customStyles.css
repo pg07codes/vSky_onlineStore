@@ -13,6 +13,18 @@ html,body{
     box-shadow: grey 2px 1px 4px;
     transition: transform 500ms;
 }
+.images img{
+    transform: scale(1);
+    transition: transform 0.6s, box-shadow 800ms;
+}
+.images img:hover{
+    transform: scale(1.1);
+    transition: transform 0.6s;
+    box-shadow: grey 2px 1px 4px;
+}
+.cart{
+    min-height: 80%;
+}
 .cart img{
     transform: scale(1.0);
     transition: transform 500ms;
